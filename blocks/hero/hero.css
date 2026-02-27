@@ -7,6 +7,9 @@
   position: relative;
   padding: 40px 24px;
   min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero h1 {
@@ -14,6 +17,8 @@
   margin-left: auto;
   margin-right: auto;
   color: var(--background-color);
+  margin-top: 0;
+  text-align: center;
 }
 
 .hero picture {
