@@ -13,7 +13,7 @@ export default function loadCarousel() {
     // ========== Load JQuery ========== //
     const loadJquery = document.createElement('script');
     loadJquery.setAttribute('type', 'text/javascript');
-    loadJquery.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js';
+    loadJquery.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'; 
 
     loadJquery.onload = () => {
       // Give it a moment for Jquery to be available
