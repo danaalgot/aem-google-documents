@@ -1,0 +1,80 @@
+.carousel {
+  position: relative;
+}
+
+.carousel button {
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+  border-radius: 10rem;
+}
+
+.carousel button:hover {
+  background: var(--apricot);
+}
+
+.carousel .slick-arrow {
+  position: absolute;
+  top: 42%;
+  z-index: 1;
+  height: 3rem;
+  width: 3rem;
+}
+
+.carousel .slick-arrow span {
+  display: block;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 -960 960 960'%3E%3Cpath d='m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80z'/%3E%3C/svg%3E");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.carousel .slick-arrow.slick-next span {
+  transform: rotate(180deg);
+}
+
+.carousel .slick-next {
+  right: 1rem;
+}
+
+.carousel .slick-prev {
+  left: 1rem;
+}
+
+.carousel .slick-track {
+  display: flex;
+}
+
+.carousel .slick-list {
+  overflow: hidden;
+}
+
+.slick-sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* Dots */
+.slick-dots {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.slick-dots button {
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
+.slick-dots .slick-active button {
+  background: var(--apricot);
+}
