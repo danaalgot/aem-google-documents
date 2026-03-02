@@ -12,10 +12,18 @@
 
 :root {
   /* colors */
-  --background-color: white;
+  --slate-grey: #747C92;
+  --sage: #81B29A;
+  --peach: #E07A5F;
+  --indigo: #3D405B;
+  --apricot: #F2CC8F;
+  --white: #fff;
+  --black: #131313;
+
+  --background-color: var(--white);
   --light-color: #f8f8f8;
   --dark-color: #505050;
-  --text-color: #131313;
+  --text-color: var(--black);
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
 
@@ -317,9 +325,21 @@ main > .section:first-of-type {
 }
 
 /* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
+.section.background-sage,
+.section.background-peach,
+.section.background-apricot {
   margin: 0;
   padding: 40px 0;
+}
+
+.section.background-sage {
+  background-color: var(--sage);
+}
+
+.section.background-peach {
+  background-color: var(--peach);
+}
+
+.section.background-apricot {
+  background: var(--apricot);
 }
