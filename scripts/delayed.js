@@ -1,6 +1,5 @@
 // add delayed functionality here
 export default function loadCarousel() {
-
   // ------------------------------------------------
   // Loading libraries for Accessible Slick carousel
   // ------------------------------------------------
