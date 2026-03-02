@@ -1,0 +1,19 @@
+/* section metadata */
+.section.background-sage,
+.section.background-peach,
+.section.background-apricot {
+  margin: 0;
+  padding: 40px 0;
+}
+
+.section.background-sage {
+  background-color: var(--sage);
+}
+
+.section.background-peach {
+  background-color: var(--peach);
+}
+
+.section.background-apricot {
+  background: var(--apricot);
+}
