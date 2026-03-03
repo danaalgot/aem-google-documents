@@ -1,57 +1,35 @@
 // add delayed functionality here
 export default function loadCarousel() {
-  // ------------------------------------------------
-  // Loading libraries for Accessible Slick carousel
-  // ------------------------------------------------
   return new Promise((resolve, reject) => {
-    // Check if JQuery and Accessible Slick are already loaded
     if (typeof window.$ !== 'undefined' && typeof window.$.fn.slick !== 'undefined') {
       resolve(window.$);
       return;
     }
 
-    // ========== Load JQuery ========== //
     const loadJquery = document.createElement('script');
     loadJquery.setAttribute('type', 'text/javascript');
     loadJquery.src = 'https://code.jquery.com/jquery-3.5.1.min.js';
 
+    loadJquery.onerror = () => reject(new Error('Failed to load jQuery'));
+
     loadJquery.onload = () => {
-      // Give it a moment for Jquery to be available
-      setTimeout(() => {
-        if (typeof window.$ !== 'undefined') {
+      const loadAccessibleSlick = document.createElement('script');
+      loadAccessibleSlick.setAttribute('type', 'text/javascript');
+      loadAccessibleSlick.src = '//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js';
+
+      loadAccessibleSlick.onload = () => {
+        if (typeof window.$ !== 'undefined' && typeof window.$.fn.slick !== 'undefined') {
           resolve(window.$);
         } else {
-          reject(new Error('Jquery not found on window after CDN load'));
+          reject(new Error('Accessible Slick not available after load'));
         }
-      }, 100);
-    };
+      };
 
-    loadJquery.onerror = () => {
-      reject(new Error('Failed to load Jquery script'));
+      loadAccessibleSlick.onerror = () => reject(new Error('Failed to load Accessible Slick'));
+
+      document.body.append(loadAccessibleSlick);
     };
 
     document.body.append(loadJquery);
-
-    // ========== Load Accessible Slick ========== //
-    const loadAccessibleSlick = document.createElement('script');
-    loadAccessibleSlick.setAttribute('type', 'text/javascript');
-    loadAccessibleSlick.src = '//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js';
-
-    loadAccessibleSlick.onload = () => {
-      // Give it a moment for Accessible Slick to be available
-      setTimeout(() => {
-        if (typeof window.$.fn.slick !== 'undefined') {
-          resolve(window.$.fn.slick);
-        } else {
-          reject(new Error('Accessible Slick not found on window after CDN load'));
-        }
-      }, 100);
-    };
-
-    loadAccessibleSlick.onerror = () => {
-      reject(new Error('Failed to load Jquery script'));
-    };
-
-    document.body.append(loadAccessibleSlick);
   });
 }
