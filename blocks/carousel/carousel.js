@@ -1,3 +1,4 @@
+/* global $ */
 import loadCarousel from '../../scripts/delayed.js';
 
 export default async function decorate(block) {
